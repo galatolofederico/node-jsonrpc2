@@ -22,9 +22,6 @@ module.exports = function (classes){
        * calls and responses are done in other places.
        */
       call     : function (method, params, callback){
-        if (!_.isArray(params)) {
-          params = [params];
-        }
 
         var id = null;
         if (_.isFunction(callback)) {
