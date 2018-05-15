@@ -21,7 +21,7 @@ module.exports = function (classes){
        * Note that some ways to make RPC calls bypass this method, for example HTTP
        * calls and responses are done in other places.
        */
-      call     : function (method, params, callback, endline = false){
+      call     : function (method, params, callback, endline = ""){
 
         var id = null;
         if (_.isFunction(callback)) {
@@ -37,7 +37,8 @@ module.exports = function (classes){
           params : params,
           id     : id
         });
-        this.write(data+endline ? "\n" : "");
+        
+        this.write(data+endline);
       },
 
       /**
